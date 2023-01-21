@@ -72,6 +72,7 @@ async def get_uploading_status(task_id: str):
     if task.done():
         res = await task
         response['result'].update(res)
+        del tasks_list[task_id]
 
     return response
 
